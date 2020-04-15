@@ -1,0 +1,8 @@
+FROM node:13-buster
+
+RUN apt-get update -qy \
+ && apt-get install -qy \
+    build-essential
+
+ENV PROJECT github.com/tony-yang/socialpictionary
+WORKDIR /nodejs/$PROJECT
