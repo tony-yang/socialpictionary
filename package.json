@@ -1,0 +1,23 @@
+{
+  "name": "SocialPictionary",
+  "version": "0.0.1",
+  "description": "An online social pictionary game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tony-yang/socialpictionary.git"
+  },
+  "author": "Tony Yang",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tony-yang/socialpictionary/issues"
+  },
+  "homepage": "https://github.com/tony-yang/socialpictionary#readme",
+  "dependencies": {
+    "express": "4.x",
+    "socket.io": "2.x"
+  }
+}
