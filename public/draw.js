@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+  var socket = io();
+
   var mouse = {
     click: false,
     move: false,
     pos: {x:0, y:0},
-    pos_prev: false
+    pos_prev: {},
   };
+
   var canvas = document.getElementById('board');
   var context = canvas.getContext('2d');
   var width = 500;
   var height = 500;
-  var socket = io();
 
   canvas.width = width;
   canvas.hegiht = height;
@@ -17,16 +19,16 @@ document.addEventListener('DOMContentLoaded', function() {
   canvas.onmousedown = function(e) {mouse.click = true;}
   canvas.onmouseup = function(e) {mouse.click = false;}
   canvas.onmousemove = function(e) {
-    mouse.pos.x = e.clientX / width;
-    mouse.pos.y = e.clientY / height;
+    mouse.pos.x = e.offsetX;
+    mouse.pos.y = e.offsetY;
     mouse.move = true;
   };
 
-  socket.on('draw_line', function(d) {
+  socket.on('draw_line', (d) => {
     var line = d.line;
     context.beginPath();
-    context.moveTo(line[0].x * width, line[0].y * height);
-    context.lineTo(line[1].x * width, line[1].y * height);
+    context.moveTo(line[0].x, line[0].y);
+    context.lineTo(line[1].x, line[1].y);
     context.stroke();
   });
 
