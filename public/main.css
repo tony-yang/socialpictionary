@@ -1,20 +1,30 @@
+h1 {
+  margin: 0px;
+  font-size: 22px;
+}
+
 #main {
-  width: 500px;
-  height: 500px;
+  position: relative;
+  top: 50px;
 }
 
 #board {
   border: 1px solid #000;
 }
 
-#chat {
-  width: 300px;
-  height: 500px;
+#word, #canvas, #chat {
   border: 1px solid #000;
+  width: 100%;
+}
+
+#canvas {
+  height: 400px;
+}
+
+#chat {
   position: relative;
 }
 
 #chat form {
-  position: absolute;
-  bottom: 0px;
+  
 }
